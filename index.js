@@ -17,15 +17,17 @@ app.use('/account',account)
 app.use(express.urlencoded({extended:true}))
 dotenv.config()
 
-app.get('/factorylist',db.dashboard.getFactoryList)
-app.delete('/factorylist',db.dashboard.delFactoryList)
-app.post('/factorylist',db.dashboard.createFactoryList)
-app.put('/factorylist',db.dashboard.updateFactoryList)
+app.get('/factorylist',auth,db.dashboard.getFactoryList)
+app.delete('/factorylist',auth,isAdmin,log,db.dashboard.delFactoryList)
+app.post('/factorylist',auth,isEditor,log,db.dashboard.createFactoryList)
+app.put('/factorylist',auth,isEditor,log,db.dashboard.updateFactoryList)
 
-app.get('/factorydata',db.dashboard.getFactoryData)
-app.delete('/factorydata',db.dashboard.delFactoryData)
-app.post('/factorydata',db.dashboard.createFactoryData)
-app.put('/factorydata',db.dashboard.updateFactoryData)
+app.get('/factorydata',auth,db.dashboard.getFactoryData)
+app.delete('/factorydata',auth,isAdmin,log,db.dashboard.delFactoryData)
+app.post('/factorydata',auth,isEditor,log,db.dashboard.createFactoryData)
+app.put('/factorydata',auth,isEditor,log,db.dashboard.updateFactoryData)
+
+
 
 
 mongoose.connect(process.env.DATABASE,{
