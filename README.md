@@ -1,5 +1,5 @@
 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![JavaScript](httpss://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](httpss://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![MongoDB](httpss://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Postgres](httpss://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 # Energy-Dashboard-Backend
 
@@ -27,7 +27,7 @@ This repo includes the backend side of the Factory Dashboard project. MongoDB an
 
 ## Authors
 
-- [@Eralpozcan](https://www.github.com/Eralpozcan)
+- [@Eralpozcan](httpss://www.github.com/Eralpozcan)
 
 
 
@@ -40,7 +40,7 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 
 ### User
 #### Register
-```http
+```https
   POST /account/register
 ```
 
@@ -53,7 +53,7 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 | `role` | `string` | **Required**. Values =["Admin","Editor","User"]|
 
 #### Login
-```http
+```httpss
   POST /account/login
 ```
 
@@ -67,13 +67,13 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 ### Data
 #### Get All Records 
 
-```http
+```httpss
   GET /factorydata
 ```
 
 #### Create New Data
 
-```http
+```httpss
   POST /factorydata
 ```
 | Parameter | Type     | Description                |
@@ -87,7 +87,7 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 
 #### Update Data
 
-```http
+```httpss
   PUT /factorydata
 ```
 | Parameter | Type     | Description                |
@@ -101,7 +101,7 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 
 #### Delete Data
 
-```http
+```https
   DELETE /factorydata
 ```
 | Parameter | Type     | Description                |
@@ -112,13 +112,13 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 ## List
 #### Get All List
 
-```http
+```https
   GET /factorylist
 ```
 
 #### Create New List
 
-```http
+```https
   POST /factorylist
 ```
 | Parameter | Type     | Description                |
@@ -132,7 +132,7 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 
 #### Update List
 
-```http
+```https
   PUT /factorylist
 ```
 | Parameter | Type     | Description                |
@@ -146,7 +146,7 @@ To authenticate an API request, you should provide your JWT in the `x-access-tok
 
 #### Delete List
 
-```http
+```https
   DELETE /factorylist
 ```
 | Parameter | Type     | Description                |
