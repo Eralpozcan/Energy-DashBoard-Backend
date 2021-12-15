@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-const conString = "POSTGREURL";
+const conString = process.env.POSTGRESHOST;
 const client = new pg.Client(conString);
 
 

@@ -4,12 +4,10 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const db = require('./db/index')
 const account = require('./routers/userRouters')
-
 const log = require('./middleware/log')
 const auth = require('./middleware/auth')
 const isAdmin =require('./middleware/isAdmin')
 const isEditor = require('./middleware/isEditor')
-
 const app = express()
 
 app.use(cors())
@@ -40,11 +38,11 @@ mongoose.connect(process.env.DATABASE,{
     }
 })
 
-app.listen(3030,err =>{
+app.listen(process.env.PORT,err =>{
     if (err){
         console.error(err)
     }
     else{
-        console.log(3030 + " listening..")
+        console.log(process.env.PORT + " listening..")
     }
 })
