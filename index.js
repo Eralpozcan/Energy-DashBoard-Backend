@@ -2,10 +2,13 @@ const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
-
-
 const db = require('./db/index')
 const account = require('./routers/userRouters')
+
+const log = require('./middleware/log')
+const auth = require('./middleware/auth')
+const isAdmin =require('./middleware/isAdmin')
+const isEditor = require('./middleware/isEditor')
 
 const app = express()
 
