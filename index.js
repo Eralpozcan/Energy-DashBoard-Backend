@@ -2,18 +2,26 @@ const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
-const db = require('./db/index')
-const account = require('./routers/userRouters')
+
 const log = require('./middleware/log')
 const auth = require('./middleware/auth')
 const isAdmin =require('./middleware/isAdmin')
 const isEditor = require('./middleware/isEditor')
+
+const db = require('./db/index')
+const account = require('./routers/userRouters')
+
+
+
 const app = express()
 
 app.use(cors())
-app.use('/account',account)
 app.use(express.urlencoded({extended:true}))
 dotenv.config()
+
+
+app.use('/account',account)
+
 
 app.get('/factorylist',auth,db.dashboard.getFactoryList)
 app.delete('/factorylist',auth,isAdmin,log,db.dashboard.delFactoryList)
@@ -27,7 +35,6 @@ app.put('/factorydata',auth,isEditor,log,db.dashboard.updateFactoryData)
 
 
 
-
 mongoose.connect(process.env.DATABASE,{
     useNewUrlParser: true, useUnifiedTopology: true  
 },err => {
@@ -38,11 +45,11 @@ mongoose.connect(process.env.DATABASE,{
     }
 })
 
-app.listen(process.env.PORT,err =>{
+app.listen(3030,err =>{
     if (err){
         console.error(err)
     }
     else{
-        console.log(process.env.PORT + " listening..")
+        console.log(3030 + " listening..")
     }
 })
