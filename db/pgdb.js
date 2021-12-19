@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-const conString = process.env.POSTGRESHOST;
+const conString = "POSTGRESURI";
 const client = new pg.Client(conString);
 
 

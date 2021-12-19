@@ -92,7 +92,7 @@ router.post(
             email
         })
         if(!user){
-            return res.status(400).send("user not found")
+            return res.status(400).send("User not found")
         }
         const isMatch = await bcrypt.compare(password,user.password)
         if(!isMatch){
@@ -101,6 +101,8 @@ router.post(
         const payload = {
             user:{
                 id:user.id,
+                email:user.email,
+                role:user.role
             }
         }
         jwt.sign(payload,process.env.SECRET_KEY,{
@@ -108,7 +110,7 @@ router.post(
         },(err,token)=>{
             if(err) throw err
             res.status(200).json({
-                token
+                token,user
             })
         })
     } catch (err) {
