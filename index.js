@@ -24,16 +24,25 @@ dotenv.config()
 app.use('/account',account)
 
 
-app.get('/factorylist',db.dashboard.getFactoryList)
-app.delete('/factorylist',auth,isAdmin,log,db.dashboard.delFactoryList)
-app.post('/factorylist',auth,isEditor,log,db.dashboard.createFactoryList)
-app.put('/factorylist',auth,isEditor,log,db.dashboard.updateFactoryList)
+// app.get('/factorylist',db.dashboard.getFactoryList)
+// app.delete('/factorylist',auth,isAdmin,log,db.dashboard.delFactoryList)
+// app.post('/factorylist',auth,isEditor,log,db.dashboard.createFactoryList)
+// app.put('/factorylist',auth,isEditor,log,db.dashboard.updateFactoryList)
 
-app.get('/factorydata',db.dashboard.getFactoryData)
-app.delete('/factorydata',auth,isAdmin,log,db.dashboard.delFactoryData)
-app.post('/factorydata',auth,isEditor,log,db.dashboard.createFactoryData)
-app.put('/factorydata',auth,isEditor,log,db.dashboard.updateFactoryData)
+// app.get('/factorydata',db.dashboard.getFactoryData)
+// app.delete('/factorydata',auth,isAdmin,log,db.dashboard.delFactoryData)
+// app.post('/factorydata',auth,isEditor,log,db.dashboard.createFactoryData)
+// app.put('/factorydata',auth,isEditor,log,db.dashboard.updateFactoryData)
 
+
+
+app.get('/dashboard/getall',db.dashboard.getAll)
+app.post('/dashboard/addnewrow',db.dashboard.addNewRow)
+app.delete('/dashboard/deleterow',db.dashboard.deleteRow)
+app.patch('/dashboard/updaterow',db.dashboard.updateRow)
+
+app.post('/dashboard/addnewcolumn',log,db.dashboard.addNewColumn)
+app.delete('/dashboard/deletecolumn',log,db.dashboard.deleteColumn)
 
 
 mongoose.connect(process.env.DATABASE,{
