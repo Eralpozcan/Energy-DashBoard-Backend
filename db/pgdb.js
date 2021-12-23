@@ -1,6 +1,6 @@
 var pg = require('pg');
 
-const conString = "postgres://wiamsred:B9L7vvhdG6irWJXjwW_HS7C58AUNA0Ml@abul.db.elephantsql.com/wiamsred";
+const conString = process.env.POSTGRESHOST;
 const client = new pg.Client(conString);
 
 
